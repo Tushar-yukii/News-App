@@ -10,7 +10,7 @@ const News = (props) => {
   const [totalResults, setTotalResults] = useState(0);
 
   const updateNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=3a971711363644b28d679ada54947af1&page=${page}&pageSize=20`; // error
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=3a971711363644b28d679ada54947af1&page=${page}&pageSize=${props.pageSize}`; // error
 
     setLoading(true);
     const data = await fetch(url);
@@ -34,9 +34,12 @@ const News = (props) => {
   };
 
   const fetchMoreData = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=${
+      props.country
+    }&category=${props.category}&apiKey=3a971711363644b28d679ada54947af1&page=${
+      page + 1
+    }&pageSize=${props.pageSize}`; // error
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=3a971711363644b28d679ada54947af1&page=1&pageSize=20`; // error
-
     const data = await fetch(url);
     const parsedata = await data.json();
     setAritcles(articles.concat(parsedata.articles));
@@ -45,7 +48,7 @@ const News = (props) => {
 
   return (
     <>
-      <h1 className="text-center" style={{ margin: "35px" }}>
+      <h1 className="text-center" style={{ margin: "35px", marginTop: "80px" }}>
         Daily - Top Headlines
       </h1>
       {loading && <BeatLoader className="text-center" />}
@@ -56,11 +59,11 @@ const News = (props) => {
         hasMore={articles.length !== totalResults}
         loader={<BeatLoader className=" my-3 text-center" />}
       >
-        <div className="container" >
+        <div className="container">
           <div className="row">
             {articles.map((element) => {
               return (
-                <div className="col-md-4" key={element.url} >
+                <div className="col-md-4" key={element.url}>
                   <Newsitems
                     title={element.title ? element.title : ""}
                     description={element.description ? element.description : ""}
@@ -81,10 +84,12 @@ const News = (props) => {
 };
 News.defaultProps = {
   country: "in",
+  pageSize: 8,
   category: "general",
 };
 News.propTypes = {
   country: PropTypes.string,
+  pageSize: PropTypes.number,
   category: PropTypes.string,
 };
 
