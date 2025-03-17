@@ -24,14 +24,14 @@ const News = (props) => {
     updateNews();
   }, []);
 
-  const handlepreclick = async () => {
-    setPage(page - 1);
-    updateNews();
-  };
-  const handlenextclick = async () => {
-    setPage(page + 1);
-    updateNews();
-  };
+  // const handlepreclick = async () => {
+  //   setPage(page - 1);
+  //   updateNews();
+  // };
+  // const handlenextclick = async () => {
+  //   setPage(page + 1);
+  //   updateNews();
+  // };
 
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${
@@ -65,8 +65,8 @@ const News = (props) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <Newsitems
-                    title={element.title ? element.title : ""}
-                    description={element.description ? element.description : ""}
+                    title={element.title ? element.title.slice(0, 70) : ""}
+                    description={element.description ? element.description.slice(0, 88) : ""}
                     imageurl={element.urlToImage}
                     newsUrl={element.url}
                     author={element.author}

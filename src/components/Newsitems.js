@@ -21,9 +21,9 @@ const Newsitems = (props) => {
           className="card-img-top"
           alt="..."
         />
-        <div className="card-body">
-          <h5 className="card-title">{title} </h5>
-          <p className="card-text">{description}</p>
+        <div className="card-body my-2">
+          <h5 className="card-title">{title}...</h5>
+          <p className="card-text">{description}...</p>
           <p className="card-text">
             <small className="text-danger">
               By {!author ? "Unknows" : author} on{" "}

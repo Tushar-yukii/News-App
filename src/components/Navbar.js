@@ -57,12 +57,23 @@ const Navbar = () => {
                   Sports
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="/ technology">
                   Technology
                 </Link>
-              </li>
+              </li> */}
             </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-info" type="submit">
+                Search
+              </button>
+            </form>
           </div>
         </div>
       </nav>
