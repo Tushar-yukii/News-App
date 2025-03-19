@@ -38,6 +38,7 @@ const Newsitems = (props) => {
           >
             Search More
           </a>
+        
         </div>
       </div>
     </div>

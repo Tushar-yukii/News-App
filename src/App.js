@@ -1,16 +1,26 @@
 import "./App.css";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
+
+  const [mode, setMode] = useState('light')
+  const togglemode = () =>{
+  if(mode === 'light'){
+    setMode('dark')
+  }
+  else{
+    setMode('light')
+  }
+}
   return (
     <div>
       <Router>
-        <Navbar />
+        <Navbar mode={mode} togglemode={togglemode} />
         <Switch>
           <Route exact path="/">
             <News key="general" country="us" category="general"/>

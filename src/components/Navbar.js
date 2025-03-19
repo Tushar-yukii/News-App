@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+ 
+ 
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             TopHeadlines
@@ -63,16 +65,25 @@ const Navbar = () => {
                 </Link>
               </li> */}
             </ul>
-            <form class="d-flex" role="search">
+            <form className="d-flex" role="search">
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-info" type="submit">
-                Search
-              </button>
+              <div className="form-check form-switch text-light">
+                <input
+                  className="form-check-input" onClick={togglemode} // error
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label
+                  className="form-check-label"
+                  for="flexSwitchCheckDefault"
+                >dark mode</label>
+              </div>
             </form>
           </div>
         </div>

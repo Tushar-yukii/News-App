@@ -48,6 +48,8 @@ const News = (props) => {
 
   return (
     <>
+   
+
       <h1 className="text-center" style={{ margin: "35px", marginTop: "80px" }}>
         Daily - Top Headlines
       </h1>
@@ -66,7 +68,11 @@ const News = (props) => {
                 <div className="col-md-4" key={element.url}>
                   <Newsitems
                     title={element.title ? element.title.slice(0, 70) : ""}
-                    description={element.description ? element.description.slice(0, 88) : ""}
+                    description={
+                      element.description
+                        ? element.description.slice(0, 88)
+                        : ""
+                    }
                     imageurl={element.urlToImage}
                     newsUrl={element.url}
                     author={element.author}
@@ -79,6 +85,7 @@ const News = (props) => {
           </div>
         </div>
       </InfiniteScroll>
+      
     </>
   );
 };
