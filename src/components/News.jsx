@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Newsitems from "./Newsitems";
-import { BeatLoader } from "react-spinners";
-import PropTypes, { string } from "prop-types";
+import BeatLoader from "react-spinners/BeatLoader";
+// import PropTypes, { string } from "prop-types";
+import propTypes, { string } from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 const News = (props) => {
   const [articles, setAritcles] = useState([]);
@@ -92,9 +93,9 @@ News.defaultProps = {
   category: "general",
 };
 News.propTypes = {
-  country: PropTypes.string,
-  pageSize: PropTypes.number,
-  category: PropTypes.string,
+  country: propTypes.string,
+  pageSize: propTypes.number,
+  category: propTypes.string,
 };
 
 export default News;

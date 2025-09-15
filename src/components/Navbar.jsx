@@ -1,7 +1,7 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ togglemode, mode }) => {
   return (
     <div>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -57,32 +57,30 @@ const Navbar = () => {
                   Sports
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link" to="/ technology">
-                  Technology
-                </Link>
-              </li> */}
             </ul>
-             <form className="d-flex" role="search">
+            <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-              /> 
-              {/* <div className="form-check form-switch text-light">
+              />
+              <div className="form-check form-switch text-light ms-3">
                 <input
-                  className="form-check-input" // error
+                  className="form-check-input"
                   type="checkbox"
                   role="switch"
                   id="flexSwitchCheckDefault"
+                  onClick={togglemode}
                 />
                 <label
                   className="form-check-label"
-                  for="flexSwitchCheckDefault"
-                >dark mode</label>
-              </div> */}
-            </form> 
+                  htmlFor="flexSwitchCheckDefault"
+                >
+                  {mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}
+                </label>
+              </div>
+            </form>
           </div>
         </div>
       </nav>

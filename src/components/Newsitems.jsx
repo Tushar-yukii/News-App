@@ -1,13 +1,13 @@
 import React from "react";
 
 const Newsitems = (props) => {
-  const { title, description, imageurl, newsUrl, author, date, source } = props;
+  let { title, description, imageurl, newsUrl, author, date, source } = props;
 
   return (
     <div className="my-3">
       <div className="card">
         <span
-          class="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
+          className="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
           style={{ left: "90%", zIndex: "1" }}
         >
           {source}
@@ -38,7 +38,6 @@ const Newsitems = (props) => {
           >
             Search More
           </a>
-        
         </div>
       </div>
     </div>
