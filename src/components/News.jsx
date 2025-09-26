@@ -49,6 +49,7 @@ const News = (props) => {
 
   return (
     <>
+    
       <h1 className="text-center" style={{ margin: "35px", marginTop: "80px" }}>
         Daily - Top Headlines
       </h1>
@@ -66,6 +67,7 @@ const News = (props) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <Newsitems
+                
                     title={element.title ? element.title.slice(0, 70) : ""}
                     description={
                       element.description
@@ -77,6 +79,7 @@ const News = (props) => {
                     author={element.author}
                     date={element.publishedAt}
                     source={element.source.name}
+                    
                   />
                 </div>
               );
