@@ -8,20 +8,24 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [mode, setMode] = useState("light");
+
+  // Toggle mode function
   const togglemode = () => {
     if (mode === "light") {
       setMode("dark");
+      document.body.style.backgroundColor = "#121212"; // dark background
+      document.body.style.color = "white"; // light text
     } else {
       setMode("light");
+      document.body.style.backgroundColor = "white"; // light background
+      document.body.style.color = "black"; // dark text
     }
   };
-  return (
-    <div>
-     
-        <Navbar mode={mode} togglemode={togglemode} />
-        
 
-        {/* Use Routes instead of Switch */}
+  return (
+    <>
+      <Navbar togglemode={togglemode} mode={mode} />
+      <div>
         <Routes>
           <Route
             path="/"
@@ -60,8 +64,8 @@ const App = () => {
             }
           />
         </Routes>
-   
-    </div>
+      </div>
+    </>
   );
 };
 
