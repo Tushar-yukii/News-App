@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 const Navbar = ({ togglemode, mode }) => {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className={`navbar fixed-top navbar-expand-lg ${
+          mode === "light" ? "navbar-light bg-light" : "navbar-dark bg-dark"
+        }`}
+      >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             TopHeadlines
@@ -20,6 +24,7 @@ const Navbar = ({ togglemode, mode }) => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -58,14 +63,15 @@ const Navbar = ({ togglemode, mode }) => {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+
+            <form className="d-flex align-items-center" role="search">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <div className="form-check form-switch text-light ms-3">
+              <div className="form-check form-switch ms-3">
                 <input
                   className="form-check-input"
                   type="checkbox"

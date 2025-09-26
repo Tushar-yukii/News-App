@@ -21,7 +21,7 @@ const App = () => {
         <Navbar mode={mode} togglemode={togglemode} />
         
 
-        {/* ✅ Use Routes instead of Switch */}
+        {/* Use Routes instead of Switch */}
         <Routes>
           <Route
             path="/"
