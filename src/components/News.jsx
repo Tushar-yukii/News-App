@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Newsitems from "./Newsitems";
 import BeatLoader from "react-spinners/BeatLoader";
-// import PropTypes, { string } from "prop-types";
 import propTypes, { string } from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 const News = (props) => {
@@ -11,7 +10,7 @@ const News = (props) => {
   const [totalResults, setTotalResults] = useState(0);
 
   const updateNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=3a971711363644b28d679ada54947af1&page=${page}&pageSize=${props.pageSize}`; // error
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=3a971711363644b28d679ada54947af1&page=${page}&pageSize=${props.pageSize}`;
 
     setLoading(true);
     const data = await fetch(url);
@@ -24,15 +23,6 @@ const News = (props) => {
   useEffect(() => {
     updateNews();
   }, []);
-
-  // const handlepreclick = async () => {
-  //   setPage(page - 1);
-  //   updateNews();
-  // };
-  // const handlenextclick = async () => {
-  //   setPage(page + 1);
-  //   updateNews();
-  // };
 
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${
@@ -49,7 +39,6 @@ const News = (props) => {
 
   return (
     <>
-    
       <h1 className="text-center" style={{ margin: "35px", marginTop: "80px" }}>
         Daily - Top Headlines
       </h1>
@@ -67,7 +56,6 @@ const News = (props) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <Newsitems
-                
                     title={element.title ? element.title.slice(0, 70) : ""}
                     description={
                       element.description
@@ -79,7 +67,6 @@ const News = (props) => {
                     author={element.author}
                     date={element.publishedAt}
                     source={element.source.name}
-                    
                   />
                 </div>
               );

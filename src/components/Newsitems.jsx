@@ -1,7 +1,7 @@
 import React from "react";
 
 const Newsitems = (props) => {
-  let { title, description, imageurl, newsUrl, author, date, source, mode } =
+  const { title, description, imageurl, newsUrl, author, date, source, mode } =
     props;
 
   return (
@@ -28,7 +28,7 @@ const Newsitems = (props) => {
           }
           className="card-img-top"
           alt={title}
-          style={{ objectFit: "cover", height: "200px"}}
+          style={{ objectFit: "cover", height: "200px" }}
         />
 
         {/* Body */}
@@ -52,7 +52,7 @@ const Newsitems = (props) => {
             className={`btn btn-sm ${
               mode === "dark" ? "btn-light text-dark" : "btn-dark text-light"
             }`}
-            style={{borderRadius : "14px"}}
+            style={{ borderRadius: "14px" }}
           >
             Read More
           </a>
