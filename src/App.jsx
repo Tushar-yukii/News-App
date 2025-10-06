@@ -9,16 +9,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   const [mode, setMode] = useState("light");
 
-  // Toggle mode function
+  // Toggle mode
   const togglemode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#121212"; // dark background
-      document.body.style.color = "white"; // light text
+      document.body.style.color = "white";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white"; // light background
-      document.body.style.color = "black"; // dark text
+      document.body.style.color = "black";
     }
   };
 

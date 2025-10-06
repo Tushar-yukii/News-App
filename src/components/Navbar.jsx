@@ -25,7 +25,11 @@ const Navbar = ({ togglemode, mode }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{fontWeight : "bolder", fontFamily : "monospace"}}>
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            style={{ fontWeight: "bolder", fontFamily: "monospace" }}
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/">
