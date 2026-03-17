@@ -1,5 +1,3 @@
-import React from "react";
-
 const Newsitems = (props) => {
   const { title, description, imageurl, newsUrl, author, date, source, mode } =
     props;
