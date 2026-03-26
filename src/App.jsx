@@ -11,12 +11,12 @@ const App = () => {
   const togglemode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "#121212"; // dark background
+      document.body.style.backgroundColor = "#291147"; // dark background
       document.body.style.color = "white";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white"; // light background
-      document.body.style.color = "black";
+      document.body.style.color = "#2e144f";
     }
   };
 
